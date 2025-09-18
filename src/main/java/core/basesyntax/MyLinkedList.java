@@ -74,9 +74,10 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
     public T remove(int index) {
         this.checkIndex(index, false);
         Node<T> currentNode = this.findNodeByIndex(index);
+        T removedValue = currentNode.value;
         this.unlink(currentNode);
 
-        return currentNode.value;
+        return removedValue;
     }
 
     @Override
